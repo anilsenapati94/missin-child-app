@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Missing Child Identification {% endblock %}
+{% block content %}
+
+<div class="main-banner" id="top">
+    <video autoplay muted loop id="bg-video">
+        <source src="assets/images/gym-video.mp4" type="video/mp4" />
+    </video>
+
+    <div class="video-overlay header-text"><br><br><br><br><br><br><br><br>
+        <div class="container">
+            <center><h5 style="color: whitesmoke;">View Images And Track</h5></center>
+             
+            <table class="table" style="margin-top: 1px;">
+              <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>Name</th>
+                  <th>City</th>
+                  <th>Landmark</th>
+                  <th>remark</th>
+                  <th>Image</th>
+                  <!-- <th>track</th> -->
+                </tr>
+              </thead>
+              {% for id,name,ctiy,lamdmark,remark,image,username in user %}
+              <tbody>
+                <tr>
+                  <td>{{username}}</td>
+                  <td>{{name}}</td>
+                  <td>{{ctiy}}</td>
+                  <td>{{lamdmark}}</td>
+                  <td>{{remark}}</td>
+                  
+                 
+                  <td> <img src="../static/img/{{image}}"  style="width:100px;height: 100px;"></img></td>
+                  <!-- <td><button type="submit" class="btn btn-secondary"><a href="{{ url_for('track',name=name,iname=image) }}">Click to Predict</a></button></td> -->
+                </tr>
+              </tbody>
+              {% endfor %}
+            </table>
+            
+          </div>
+    </div>
+</div>
+
+{% endblock %}

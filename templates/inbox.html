@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Missing Child Identification {% endblock %}
+{% block content %}
+<div style="background-color:rgba(136, 126, 126, 0.04);">
+<div  ><br><br><br><br><br><br>
+    <video autoplay muted loop id="bg-video">
+        <source src="assets/images/gym-video.mp4" type="video/mp4" />
+    </video>
+
+    <div class="video-overlay header-text " ><br><br><br><br><br><br>
+  <div style="margin-left: 200px; " >
+    <div style="background-color:rgba(136, 126, 126, 0.04);width: 500px; padding-left: 25px; border-radius: 100px;">
+      <table  >
+     
+        <!-- <h4  align="center">Searched by :&nbsp;{{username}}</h4><hr> -->
+       
+    <thead >
+    <tr>
+      <th style="margin-left: 20px; " ><h5>upload by User</h5><hr></th>&nbsp;
+      <th ><h5 style="margin-left: 20px; ">Authority matched</h5><hr></th>
+    </tr>
+    
+  </thead>
+  {% for name,ctiy,lamdmark,remark,image,username in user %}
+  <tbody>
+    <td> <img src="../static/img/{{image}}"  style="width:200px;height: 200px;"></img></td>
+    <td> <img src="../static/img/{{image}}"  style="width:200px;height: 200px;margin-left: 30px;"></img></td>
+  
+</tbody></table>
+<div style="padding-left: 50px;">   <br>
+     <h4>Child name &nbsp;:&nbsp; {{name}}</h4> 
+     <h4>City &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:  &nbsp; {{ctiy}}</h4> 
+     <h4>Landmark &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; {{lamdmark}}</h4>
+     <h4>searched by :&nbsp; {{username}}</h4> </div>
+     <hr>
+{% endfor %} 
+    </div>
+  </div>
+
+
+
+
+      </div>
+</div>
+
+
+
+
+</div>
+
+{% endblock %}
